@@ -4,8 +4,8 @@ const User = require('app/repositories/models/User')
 
 passport.use(
     new LocalStrategy({
-        usernameField: 'user[email]',
-        passwordField: 'user[password]'
+        usernameField: 'email',
+        passwordField: 'password'
     },
     async (email, password, done) => {
         try {

@@ -4,7 +4,7 @@ function getAll() {
     return Post.find({}, 'title content').exec()
 }
 
-async function show(postId) {
+async function findById(postId) {
     return await Post.findById(postId, 'title content').exec()
 }
 
@@ -29,7 +29,7 @@ async function remove(postId) {
 
 module.exports = {
     getAll,
-    show,
+    findById,
     update,
     store,
     remove

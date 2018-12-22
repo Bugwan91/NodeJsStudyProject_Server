@@ -3,9 +3,11 @@ const router = express.Router()
 const AuthController = require('app/controllers/AuthController')
 const AuthMiddleware = require('app/middlewares/AuthMiddleware')
 
-router.post('/login', AuthController.login)
-router.post('/register', AuthController.register)
-router.get('/logout', AuthMiddleware.required, AuthController.logout)
+const RegisterValidator = require('app/middlewares/validators/RegisterValidator')
+
+router.post('/login', AuthController.loginAction)
+router.post('/register', RegisterValidator, AuthController.registerAction)
+router.get('/logout', AuthMiddleware.required, AuthController.logoutAction)
 
 module.exports = router
 /*

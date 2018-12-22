@@ -3,7 +3,7 @@ const router = express.Router()
 const PostsController = require('app/controllers/PostsController')
 const AuthMiddleware = require('app/middlewares/AuthMiddleware')
 
-router.use(AuthMiddleware.required)
+// router.use(AuthMiddleware.required)
 
 router.get('/', PostsController.indexAction)
 router.post('/', PostsController.storeAction)
