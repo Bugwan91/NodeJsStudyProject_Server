@@ -1,4 +1,4 @@
-const { check, validationResult } = require('express-validator/check')
+const { check } = require('express-validator/check')
 const UsersRepository = require('app/repositories/UsersRepository')
 
 const NameValidator = check("name").isLength({ max: 256 })

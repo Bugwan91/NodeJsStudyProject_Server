@@ -1,8 +1,6 @@
 const User = require('app/repositories/models/User')
 
 function register (req, res) {
-    console.log('register');
-    return;
     const user = new User({
         name: req.body.name,
         email: req.body.email
