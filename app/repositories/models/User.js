@@ -13,14 +13,20 @@ const UserSchema = new Schema({
         unique: true
     },
     name: {
-        type: String
+        type: String,
+        required: true
     },
     hash: String,
     salt: String,
     created: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+        required: true
+    },
+    posts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+    }]
 })
 
 UserSchema.methods.setPassword = function (password) {
