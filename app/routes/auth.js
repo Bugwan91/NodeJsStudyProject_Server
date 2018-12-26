@@ -3,7 +3,7 @@ const router = express.Router()
 const AuthController = require('app/controllers/AuthController')
 const AuthMiddleware = require('app/middlewares/AuthMiddleware')
 
-const LoginValidator = reqire('app/middleware/validators/LoginValidator')
+const LoginValidator = require('app/middlewares/validators/LoginValidator')
 const RegisterValidator = require('app/middlewares/validators/RegisterValidator')
 
 router.post('/login', LoginValidator, AuthController.loginAction)
