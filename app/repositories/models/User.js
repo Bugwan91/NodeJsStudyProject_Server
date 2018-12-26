@@ -22,11 +22,7 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now,
         required: true
-    },
-    posts: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Post'
-    }]
+    }
 })
 
 UserSchema.methods.setPassword = function (password) {

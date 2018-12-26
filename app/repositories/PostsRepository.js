@@ -11,7 +11,8 @@ async function findById(postId) {
 async function store(postData) {
     const post = new Post({
         title: postData.title,
-        content: postData.content
+        content: postData.content,
+        author: postData.author
     })
     return await post.save()
 }
